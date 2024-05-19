@@ -19,109 +19,52 @@ def save_to_file(filename, data):
     with open(filename, 'a') as f:
         f.write(data + '\n')
 
-# Fungsi untuk melakukan pengujian operasi insert dengan banyak data
-def test_insert_operation():
+# Fungsi umum untuk menjalankan operasi SQL
+def execute_sql_operation(operation_name, query, values=None):
     try:
         connection = connect_to_database()
         if connection:
             cursor = connection.cursor()
 
-            # Query untuk operasi insert
-            query = """
-            INSERT INTO products (name, price, category, description) 
-            VALUES ('New Product', 99, 'Test Category', 'Test Description')
-            """
             start_time = time.time() # Waktu awal eksekusi
-            for i in range(1000):  # Misalnya, melakukan operasi insert sebanyak 1000 kali
+            if values:
+                cursor.executemany(query, values)
+            else:
                 cursor.execute(query)
             connection.commit()
             end_time = time.time() # Waktu akhir eksekusi
             execution_time = end_time - start_time
 
-            print(f"Waktu komperasi Insert data {execution_time} seconds")
-            save_to_file('results.txt', f'Insert: {execution_time} seconds')
+            print(f"Waktu komperasi {operation_name} data {execution_time} seconds")
+            save_to_file('hasil/results.txt', f'{operation_name}: {execution_time} seconds')
 
             cursor.close()
             connection.close()
     except Exception as e:
         print("Error:", e)
+
+# Fungsi untuk melakukan pengujian operasi insert dengan banyak data
+def test_insert_operation():
+    query = "INSERT INTO products (name, price, category, description) VALUES (%s, %s, %s, %s)"
+    values = [('New Product', 99, 'Test Category', 'Test Description') for _ in range(1000)]
+    execute_sql_operation("Insert", query, values)
 
 # Fungsi untuk melakukan pengujian operasi update
 def test_update_operation():
-    try:
-        connection = connect_to_database()
-        if connection:
-            cursor = connection.cursor()
-
-            # Query untuk operasi update
-            query = """
-            UPDATE products SET price = 199 WHERE name = 'New Product'
-            """
-            start_time = time.time() # Waktu awal eksekusi
-            cursor.execute(query)
-            connection.commit()
-            end_time = time.time() # Waktu akhir eksekusi
-            execution_time = end_time - start_time
-
-            print(f"Waktu komperasi Update data {execution_time} seconds")
-            save_to_file('results.txt', f'Update: {execution_time} seconds')
-
-            cursor.close()
-            connection.close()
-    except Exception as e:
-        print("Error:", e)
+    query = "UPDATE products SET price = 199 WHERE price = 2000"
+    execute_sql_operation("Update", query)
 
 # Fungsi untuk melakukan pengujian operasi search
 def test_search_operation():
-    try:
-        connection = connect_to_database()
-        if connection:
-            cursor = connection.cursor()
-
-            # Query untuk operasi search
-            query = """
-            SELECT * FROM products WHERE category = 'Test Category'
-            """
-            start_time = time.time() # Waktu awal eksekusi
-            cursor.execute(query)
-            products_data = cursor.fetchall()
-            end_time = time.time() # Waktu akhir eksekusi
-            execution_time = end_time - start_time
-
-            print(f"Waktu komperasi Search data {execution_time} seconds")
-            save_to_file('results.txt', f'Search: {execution_time} seconds')
-
-            cursor.close()
-            connection.close()
-    except Exception as e:
-        print("Error:", e)
+    query = "SELECT * FROM products WHERE category = 'Test Category'"
+    execute_sql_operation("Search", query)
 
 # Fungsi untuk melakukan pengujian operasi delete
 def test_delete_operation():
-    try:
-        connection = connect_to_database()
-        if connection:
-            cursor = connection.cursor()
+    query = "DELETE FROM products WHERE name = 'New Product'"
+    execute_sql_operation("Delete", query)
 
-            # Query untuk operasi delete
-            query = """
-            DELETE FROM products WHERE name = 'New Product'
-            """
-            start_time = time.time() # Waktu awal eksekusi
-            cursor.execute(query)
-            connection.commit()
-            end_time = time.time() # Waktu akhir eksekusi
-            execution_time = end_time - start_time
-
-            print(f"Waktu komperasi Delete data {execution_time} seconds")
-            save_to_file('results.txt', f'Delete: {execution_time} seconds')
-
-            cursor.close()
-            connection.close()
-    except Exception as e:
-        print("Error:", e)
-
-save_to_file('results.txt', 'Komparasi DB Relasional tanpa Caching')
+save_to_file('hasil/results.txt', 'Komparasi DB Relasional tanpa Caching')
 # Panggil fungsi untuk menjalankan pengujian operasi insert dengan banyak data
 test_insert_operation()
 
@@ -133,4 +76,4 @@ test_search_operation()
 
 # Panggil fungsi untuk menjalankan pengujian operasi delete
 test_delete_operation()
-save_to_file('results.txt', '----------------------------------------')
+save_to_file('hasil/results.txt', '----------------------------------------')

@@ -1,0 +1,45 @@
+Komparasi Mongo DB tanpa Caching
+Insert: 0.10479164123535156 seconds
+Update: 14.35552430152893 seconds
+Search: 0.041754722595214844 seconds
+Delete: 0.41541123390197754 seconds
+----------------------------------------
+Komparasi Mongo DB dengan Caching
+Insert: 0.0379185676574707 seconds
+Update: 5.72849178314209 seconds
+Search: 0.004022836685180664 seconds
+Delete: 0.32174181938171387 seconds
+----------------------------------------
+Komparasi Mongo DB dengan Caching
+Insert: 0.010009050369262695 seconds
+Update: 5.112046241760254 seconds
+Search: 0.02769923210144043 seconds
+Delete: 0.31252479553222656 seconds
+----------------------------------------
+Komparasi Mongo DB dengan Caching
+----------------------------------------
+Komparasi Mongo DB dengan Caching
+----------------------------------------
+Komparasi Mongo DB tanpa Caching
+Insert: 0.02094435691833496 seconds
+Update: 5.589066982269287 seconds
+Search: 0.023812294006347656 seconds
+Delete: 0.28377318382263184 seconds
+----------------------------------------
+Komparasi Mongo DB dengan Caching
+----------------------------------------
+Komparasi DB Relasional tanpa Caching
+Delete: 0.0035457611083984375 seconds
+----------------------------------------
+Komparasi DB Relasional tanpa Caching
+Update: 0.0030417442321777344 seconds
+Delete: 0.0019931793212890625 seconds
+----------------------------------------
+Komparasi DB Relasional tanpa Caching
+Update: 0.002378225326538086 seconds
+Delete: 0.001886606216430664 seconds
+----------------------------------------
+Komparasi DB Relasional tanpa Caching
+Update: 0.0024335384368896484 seconds
+Delete: 0.0014667510986328125 seconds
+----------------------------------------
