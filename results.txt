@@ -1,0 +1,102 @@
+Komparasi DB Relasional tanpa Caching
+Insert: 0.18568015098571777 seconds
+Update: 0.0074100494384765625 seconds
+Delete: 0.01188969612121582 seconds
+----------------------------------------
+Komparasi DB Relasional tanpa Caching
+Insert: 0.18246912956237793 seconds
+Update: 0.009781837463378906 seconds
+Delete: 0.01127481460571289 seconds
+----------------------------------------
+Komparasi DB Relasional tanpa Caching
+Insert: 0.2353529930114746 seconds
+Update: 0.010380029678344727 seconds
+Delete: 0.009186029434204102 seconds
+----------------------------------------
+
+
+Komparasi DB Relasional dengan Caching
+Insert: 0.00798940658569336 seconds (from cache)
+Update: 0.00025200843811035156 seconds (from cache)
+Delete: 0.00024080276489257812 seconds (from cache)
+----------------------------------------
+Komparasi DB Relasional dengan Caching
+Insert: 0.0040318965911865234 seconds (from cache)
+Update: 0.00022101402282714844 seconds (from cache)
+Delete: 0.00028586387634277344 seconds (from cache)
+----------------------------------------
+Komparasi DB Relasional dengan Caching
+Insert: 0.003702878952026367 seconds (from cache)
+Update: 0.0002560615539550781 seconds (from cache)
+Delete: 0.0002048015594482422 seconds (from cache)
+----------------------------------------
+
+
+Komparasi DB JSON tanpa Caching
+Insert operation execution time: 0.23537898063659668 seconds
+Update operation execution time: 0.03811502456665039 seconds
+Delete operation execution time: 0.015295982360839844 seconds
+----------------------------------------
+Komparasi DB JSON tanpa Caching
+Insert operation execution time: 0.15352392196655273 seconds
+Update operation execution time: 0.03637099266052246 seconds
+Delete operation execution time: 0.010605096817016602 seconds
+----------------------------------------
+Komparasi DB JSON tanpa Caching
+Insert operation execution time: 0.2044978141784668 seconds
+Update operation execution time: 0.03741288185119629 seconds
+Delete operation execution time: 0.006330013275146484 seconds
+----------------------------------------
+
+
+Komparasi DB JSON dengan Caching
+Insert: b'0.19442486763000488' seconds (from cache)
+Update: b'0.03642010688781738' seconds (from cache)
+Delete: b'0.010480880737304688' seconds (from cache)
+----------------------------------------
+Komparasi DB JSON dengan Caching
+Insert: b'0.19442486763000488' seconds (from cache)
+Update: b'0.03642010688781738' seconds (from cache)
+Delete: b'0.010480880737304688' seconds (from cache)
+----------------------------------------
+Komparasi DB JSON dengan Caching
+Insert: b'0.19442486763000488' seconds (from cache)
+Update: b'0.03642010688781738' seconds (from cache)
+Delete: b'0.010480880737304688' seconds (from cache)
+----------------------------------------
+
+
+
+Komparasi Mongo DB tanpa Caching
+Insert: 0.9034130573272705 seconds
+Update: 0.07673192024230957 seconds
+Delete: 0.04743218421936035 seconds
+----------------------------------------
+Komparasi Mongo DB tanpa Caching
+Insert: 1.0178298950195312 seconds
+Update: 0.04145002365112305 seconds
+Delete: 0.028488874435424805 seconds
+----------------------------------------
+Komparasi Mongo DB tanpa Caching
+Insert: 0.8950841426849365 seconds
+Update: 0.0821981430053711 seconds
+Delete: 0.19063591957092285 seconds
+----------------------------------------
+
+
+
+Komparasi Mongo DB dengan Caching
+Insert: 0.2867441177368164 seconds
+Update: 0.046013832092285156 secondsq
+Delete: 0.02000713348388672 seconds
+----------------------------------------
+Komparasi Mongo DB dengan Caching
+Insert: 0.23388361930847168 seconds
+Update: 0.016955137252807617 seconds
+Delete: 0.027396440505981445 seconds
+----------------------------------------
+Komparasi Mongo DB dengan Caching
+Insert: 0.24570918083190918 seconds
+Update: 0.04022932052612305 seconds
+Delete: 0.015956401824951172 seconds
+----------------------------------------
