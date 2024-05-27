@@ -51,18 +51,15 @@ def test_insert_operation():
 
 # Fungsi untuk melakukan pengujian operasi update
 def test_update_operation():
-    query = "UPDATE products SET price = 199 WHERE price = 2000"
-    execute_sql_operation("Update", query)
-
-# Fungsi untuk melakukan pengujian operasi search
-def test_search_operation():
-    query = "SELECT * FROM products WHERE category = 'Test Category'"
-    execute_sql_operation("Search", query)
+    query = "UPDATE products SET price = 199 WHERE name = %s"
+    values = [('New Product',) for _ in range(1000)]
+    execute_sql_operation("Update", query, values)
 
 # Fungsi untuk melakukan pengujian operasi delete
 def test_delete_operation():
-    query = "DELETE FROM products WHERE name = 'New Product'"
-    execute_sql_operation("Delete", query)
+    query = "DELETE FROM products WHERE name = %s"
+    values = [('New Product',) for _ in range(1000)]
+    execute_sql_operation("Delete", query, values)
 
 save_to_file('hasil/results.txt', 'Komparasi DB Relasional tanpa Caching')
 # Panggil fungsi untuk menjalankan pengujian operasi insert dengan banyak data
@@ -71,9 +68,7 @@ test_insert_operation()
 # Panggil fungsi untuk menjalankan pengujian operasi update
 test_update_operation()
 
-# Panggil fungsi untuk menjalankan pengujian operasi search
-test_search_operation()
-
 # Panggil fungsi untuk menjalankan pengujian operasi delete
 test_delete_operation()
+
 save_to_file('hasil/results.txt', '----------------------------------------')

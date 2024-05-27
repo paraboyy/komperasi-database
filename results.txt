@@ -9,3 +9,9 @@ Delete operation execution time: 0.007369041442871094 seconds
 ----------------------------------------
 ----------------------------------------
 ----------------------------------------
+Komparasi DB Relasional dengan Caching
+Insert: 0.20331788063049316 seconds
+Update: 0.008188009262084961 seconds
+Search: 0.06809186935424805 seconds
+Delete: 0.008098125457763672 seconds
+----------------------------------------

@@ -65,4 +65,28 @@ Komparasi DB JSON tanpa Caching
 Insert operation execution time: 0.2861008644104004 seconds
 Update operation execution time: 2.859358072280884 seconds
 Delete operation execution time: 0.5630528926849365 seconds
+
+
+----------------------------------------
+Komparasi DB Relasional tanpa Caching
+Insert: 0.03828310966491699 seconds
+Update: 0.0026798248291015625 seconds
+Delete: 0.01116800308227539 seconds
+----------------------------------------
+Komparasi DB Relasional tanpa Caching
+Insert: 0.03514909744262695 seconds
+Update: 2.4281580448150635 seconds
+Delete: 1.3971929550170898 seconds
+----------------------------------------
+
+
+Komparasi DB Relasional dengan Caching
+Insert: 0.0056378841400146484 seconds (from cache)
+Update: 0.00025272369384765625 seconds (from cache)
+Delete: 0.0002849102020263672 seconds (from cache)
+----------------------------------------
+Komparasi DB Relasional dengan Caching
+Insert: 0.003136157989501953 seconds (from cache)
+Update: 0.00018787384033203125 seconds (from cache)
+Delete: 0.00019884109497070312 seconds (from cache)
 ----------------------------------------
