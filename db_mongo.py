@@ -58,13 +58,7 @@ def update_operation(db):
             {"name": product["name"]},
             {"$set": {"price": product["price"]}}
         )
-
-# Fungsi untuk operasi search
-def search_operation(db):
-    products_data = db.products.find({"category": "Test Category"})
-    for product in products_data:
-        pass  # Melakukan iterasi untuk mengonsumsi data
-
+        
 # Fungsi untuk operasi delete
 def delete_operation(db):
     products = []
@@ -84,9 +78,6 @@ test_operation("Insert", insert_operation)
 
 # Panggil fungsi untuk menjalankan pengujian operasi update
 test_operation("Update", update_operation)
-
-# Panggil fungsi untuk menjalankan pengujian operasi search
-test_operation("Search", search_operation)
 
 # Panggil fungsi untuk menjalankan pengujian operasi delete
 test_operation("Delete", delete_operation)

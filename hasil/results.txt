@@ -107,3 +107,40 @@ Insert operation execution time: 0.23464298248291016 seconds
 Update operation execution time: 2.994969129562378 seconds
 Delete operation execution time: 0.460787296295166 seconds
 ----------------------------------------
+
+
+Komparasi Mongo DB tanpa Caching
+Insert: 0.1788322925567627 seconds
+Update: 13.983709812164307 seconds
+Search: 0.07121014595031738 seconds
+Delete: 2.46936297416687 seconds
+----------------------------------------
+Komparasi Mongo DB tanpa Caching
+Insert: 0.05847597122192383 seconds
+Update: 11.214179992675781 seconds
+Delete: 2.5383501052856445 seconds
+----------------------------------------
+Komparasi Mongo DB dengan Caching
+Insert: 0.03504204750061035 seconds
+Update: 8.83119511604309 seconds
+Search: 0.0570831298828125 seconds
+Delete: 1.3050220012664795 seconds
+----------------------------------------
+Komparasi Mongo DB dengan Caching
+Insert: 4.410743713378906e-05 seconds
+Update: 1.7881393432617188e-05 seconds
+Search: 2.193450927734375e-05 seconds
+Delete: 2.002716064453125e-05 seconds
+----------------------------------------
+Komparasi Mongo DB dengan Caching
+Insert: 3.504753112792969e-05 seconds
+Update: 1.8835067749023438e-05 seconds
+Search: 2.6941299438476562e-05 seconds
+Delete: 1.6927719116210938e-05 seconds
+----------------------------------------
+Komparasi Mongo DB dengan Caching
+Insert: 3.314018249511719e-05 seconds
+Update: 1.8835067749023438e-05 seconds
+Search: 2.574920654296875e-05 seconds
+Delete: 1.811981201171875e-05 seconds
+----------------------------------------
