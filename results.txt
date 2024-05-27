@@ -15,3 +15,4 @@ Update: 0.008188009262084961 seconds
 Search: 0.06809186935424805 seconds
 Delete: 0.008098125457763672 seconds
 ----------------------------------------
+Insert: b'0.029672861099243164' seconds (from cache)

@@ -81,12 +81,29 @@ Delete: 1.3971929550170898 seconds
 
 
 Komparasi DB Relasional dengan Caching
-Insert: 0.0056378841400146484 seconds (from cache)
-Update: 0.00025272369384765625 seconds (from cache)
-Delete: 0.0002849102020263672 seconds (from cache)
+Insert: 0.04084920883178711 seconds
+Update: 2.668442964553833 seconds
+Delete: 1.360121250152588 seconds
 ----------------------------------------
 Komparasi DB Relasional dengan Caching
-Insert: 0.003136157989501953 seconds (from cache)
-Update: 0.00018787384033203125 seconds (from cache)
-Delete: 0.00019884109497070312 seconds (from cache)
+Insert: 0.004995107650756836 seconds (from cache)
+Update: 0.00020003318786621094 seconds (from cache)
+Delete: 0.00023603439331054688 seconds (from cache)
+----------------------------------------
+
+
+Komparasi DB JSON dengan Caching
+Insert: 0.029672861099243164 seconds
+Update: 0.09032201766967773 seconds
+Delete: 0.03743171691894531 seconds
+----------------------------------------
+Komparasi DB JSON dengan Caching
+Insert: b'0.029672861099243164' seconds (from cache)
+Update: b'0.09032201766967773' seconds (from cache)
+Delete: b'0.03743171691894531' seconds (from cache)
+----------------------------------------
+Komparasi DB JSON tanpa Caching
+Insert operation execution time: 0.23464298248291016 seconds
+Update operation execution time: 2.994969129562378 seconds
+Delete operation execution time: 0.460787296295166 seconds
 ----------------------------------------

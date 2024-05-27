@@ -31,7 +31,7 @@ def compare_insert_operation():
         cached_data = memcache_client.get(cache_key)
         if cached_data:
             print("Data Insert diambil dari cache")
-            save_to_file('results.txt', f'Insert: {cached_data} seconds (from cache)')
+            save_to_file('hasil/results.txt', f'Insert: {cached_data} seconds (from cache)')
             return cached_data
 
         connection = connect_to_database()
@@ -40,11 +40,12 @@ def compare_insert_operation():
 
             # Query untuk operasi insert
             query = """
-            INSERT INTO products_json (product_data) VALUES ('{"name": "New Product", "price": 99, "category": "Test Category", "description": "Test Description"}')
+            INSERT INTO products_json (product_data) VALUES (%s)
             """
+            values = [("""{"name": "New Product", "price": 99, "category": "Test Category", "description": "Test Description"}""",) for _ in range(1000)]
+            
             start_time = time.time() # Waktu awal eksekusi
-            for i in range(1000):  # Misalnya, melakukan operasi insert sebanyak 1000 kali
-                cursor.execute(query)
+            cursor.executemany(query, values)
             connection.commit()
             end_time = time.time() # Waktu akhir eksekusi
             execution_time = end_time - start_time
@@ -56,7 +57,7 @@ def compare_insert_operation():
             memcache_client.set(cache_key, execution_time)
 
             print(f"Waktu komperasi Insert data {execution_time} seconds")
-            save_to_file('results.txt', f'Insert: {execution_time} seconds')
+            save_to_file('hasil/results.txt', f'Insert: {execution_time} seconds')
 
             # Return waktu eksekusi
             return execution_time
@@ -72,7 +73,7 @@ def compare_update_operation():
         cached_data = memcache_client.get(cache_key)
         if cached_data:
             print("Data Update diambil dari cache")
-            save_to_file('results.txt', f'Update: {cached_data} seconds (from cache)')
+            save_to_file('hasil/results.txt', f'Update: {cached_data} seconds (from cache)')
             return cached_data
 
         connection = connect_to_database()
@@ -96,7 +97,7 @@ def compare_update_operation():
             memcache_client.set(cache_key, execution_time)
 
             print(f"Waktu komperasi Update data {execution_time} seconds")
-            save_to_file('results.txt', f'Update: {execution_time} seconds')
+            save_to_file('hasil/results.txt', f'Update: {execution_time} seconds')
 
             # Return waktu eksekusi
             return execution_time
@@ -112,7 +113,7 @@ def compare_delete_operation():
         cached_data = memcache_client.get(cache_key)
         if cached_data:
             print("Data Delete diambil dari cache")
-            save_to_file('results.txt', f'Delete: {cached_data} seconds (from cache)')
+            save_to_file('hasil/results.txt', f'Delete: {cached_data} seconds (from cache)')
             return cached_data
 
         connection = connect_to_database()
@@ -136,7 +137,7 @@ def compare_delete_operation():
             memcache_client.set(cache_key, execution_time)
 
             print(f"Waktu komperasi Delete data {execution_time} seconds")
-            save_to_file('results.txt', f'Delete: {execution_time} seconds')
+            save_to_file('hasil/results.txt', f'Delete: {execution_time} seconds')
 
             # Return waktu eksekusi
             return execution_time
@@ -144,7 +145,7 @@ def compare_delete_operation():
     except Exception as e:
         print("Error:", e)
 
-save_to_file('results.txt', 'Komparasi DB JSON dengan Caching')
+save_to_file('hasil/results.txt', 'Komparasi DB JSON dengan Caching')
 # Panggil fungsi untuk melakukan komparasi operasi insert
 compare_insert_operation()
 
@@ -154,4 +155,4 @@ compare_update_operation()
 # Panggil fungsi untuk melakukan komparasi operasi delete
 compare_delete_operation()
 
-save_to_file('results.txt', '----------------------------------------')
+save_to_file('hasil/results.txt', '----------------------------------------')
